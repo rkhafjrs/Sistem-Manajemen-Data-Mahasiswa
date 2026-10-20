@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Mahasiswa | StudentData</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="data-page">
+
+  <header class="data-header">
+    <div class="brand data-brand">
+    <span class="brand-icon">
+        <img src="LOGO-UNIVERSITAS-RAHARJA-1-1.png" alt="">
+    </span>
+    <span>Sistem Manajemen Data Mahasiswa</span>
+    </div>
+    
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Buka menu" aria-expanded="false">☰</button>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mahasiswa.html" class="active">Data Mahasiswa</a>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow dark-eyebrow">Sistem Manajemen Data Mahasiswa</p>
+        <h1>Rekap Data Mahasiswa</h1>
+        <p class="muted">Kelola data mahasiswa dan nilai akademik.</p>
+      </div>
+      <a href="index.html" class="btn btn-outline">← Kembali ke Home</a>
+    </div>
+
+    <section class="stats-grid">
+      <article class="stat-card stat-blue">
+        <span class="stat-icon">👥</span>
+        <h2 id="totalMahasiswa">0</h2>
+        <p>Total Mahasiswa</p>
+      </article>
+
+      <article class="stat-card stat-green">
+        <span class="stat-icon">📊</span>
+        <h2 id="rataRata">0</h2>
+        <p>Rata-rata Nilai</p>
+      </article>
+    </section>
+
+    <section class="panel form-panel">
+      <h2 id="formTitle">Tambah Mahasiswa</h2>
+
+      <form id="studentForm">
+        <div class="form-group">
+          <label for="nama">Nama Mahasiswa</label>
+          <input id="nama" type="text"
+            placeholder="Masukkan nama lengkap"
+            maxlength="100" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nim">NIM</label>
+          <input id="nim" type="text"
+            placeholder="Masukkan NIM"
+            maxlength="30" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nilai">Nilai</label>
+          <input id="nilai" type="number"
+            placeholder="0–100" min="0" max="100"
+            step="0.01" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            + Tambah Data
+          </button>
+          <button type="button" class="btn btn-outline hidden"
+            id="cancelEdit">Batal Edit</button>
+        </div>
+      </form>
+      <p id="formMessage" class="form-message" role="status"></p>
+    </section>
+
+    <section class="student-section">
+      <div class="list-heading">
+        <div>
+          <h2>Daftar Mahasiswa</h2>
+          <p class="muted">Data mahasiswa yang tersimpan.</p>
+        </div>
+        <input type="search" id="searchStudent"
+          class="search-input"
+          placeholder="Cari nama atau NIM..."
+          aria-label="Cari mahasiswa">
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama / NIM</th>
+              <th>Nilai</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="studentList"></tbody>
+        </table>
+      </div>
+
+      <p id="emptyMessage" class="empty-message hidden">
+        Belum ada data mahasiswa. Silakan tambahkan data baru.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer footer-light">
+    © 2026 Sistem Managemen Data Mahasiswa · Projek UAS Rakha Fajar Setyawan
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
